@@ -5,24 +5,34 @@ UniLoopNet: An extensible sequence-driven framework for predicting and interpret
 
 
 
-## 1. Clone the UniChrom repository:
+## 1. Clone the UniLoopNet repository:
 git clone https://github.com/shuaibinw/UniLoopNet.git
 <br>cd UniLoopNet
 ## 2. Install the required dependencies:
 
 
-<br>keras>=2.4.0
-<br>pandas>=1.2.0
-<br>numpy>=1.19.0
-<br>scipy>=1.7.3
-<br>pyBigWig >=0.3.22
-<br>matplotlib>=3.3.0
-<br>seaborn>=0.12.2
-<br>plotly>=4.14.0
-<br>scikit-learn>=1.0.2
-<br>shap>=1.0.0
-<br>tqdm>=4.66.4
-<br>pyfaidx>=0.8.10.3
-<br>seaborn>=0.12.2
-<br>deeplift>=0.6.13.0
-<br>h5py>=2.10.0
+biopython>=1.83
+<br>chainmap>=1.0.3
+<br>einops>=0.8.0
+<br>h5py>=3.10.0
+<br>joblib>=1.5.1
+<br>kaleido>=1.0.0
+<br>keras>=2.15.0
+<br>logomaker>=0.8.7
+<br>matplotlib>=3.7.2
+<br>modisco>=0.5.16.4.1
+<br>numba>=0.61.2
+<br>numpy>=1.26.0
+<br>pandas>=2.1.1
+<br>Pillow>=10.0.1
+<br>pyBigWig>=0.3.22
+<br>scikit-image>=0.22.0
+<br>scikit-learn>=1.7.0
+<br>scipy>=1.11.3
+<br>seaborn>=0.13.2
+<br>setuptools>=68.0.0
+<br>shapely>=2.0.2
+<br>tangermeme>=0.5.1
+<br>tensorflow>=2.15.0
+<br>torch>=2.1.0
+<br>torchvision>=0.16.0
