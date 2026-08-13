@@ -1,0 +1,35 @@
+MultiTaskEPInformer
+
+基于 PyTorch 实现的多任务深度学习框架，用于同时预测增强子–启动子相互作用（EPI）和增强子–增强子相互作用（EEI）。
+
+核心特性
+多任务联合学习：共享一维卷积 + Transformer 多头自注意力编码器，并使用独立的 EPI / EEI 分类头。
+自动数据重塑：支持一维展平的 .npz 序列（20000），自动转换为 (4, 5000)。
+完整评估：计算 Accuracy、F1-Score、Precision、Recall、ROC-AUC 和 AUPR，并导出 ROC / PR 曲线数据。
+环境要求
+Python 3.8+
+PyTorch >= 1.8.0
+NumPy
+Pandas
+scikit-learn
+Matplotlib
+pip install torch numpy pandas scikit-learn matplotlib
+快速运行
+
+在 EPInformer.py 中配置数据路径：
+
+data_paths = {
+    'epi_train_seq1': 'path/to/EPL_B.npz',
+    'epi_train_seq2': 'path/to/EPR_B.npz',
+    'eei_train_seq1': 'path/to/EEL_B.npz',
+    'eei_train_seq2': 'path/to/EER_B.npz',
+    ...
+}
+
+可选进行数据检查：
+
+python data_loader_3.py
+
+启动训练与测试：
+
+python EPInformer.py
