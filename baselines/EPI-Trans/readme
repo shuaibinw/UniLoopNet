@@ -33,7 +33,7 @@ seq2 = np.load('path/to/EPR_B.npz')  # Promoter
 启动训练与评估：
 
 ```bash
-python main.py
+python EPI_Trans.py
 ```
 
 模型权重自动保存至：
