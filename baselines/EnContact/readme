@@ -1,0 +1,56 @@
+````markdown
+# EnContact
+
+基于 **CNN-BiLSTM-Attention** 架构的增强子相互作用预测模型。
+
+## 环境要求
+
+- Python 3.x
+- TensorFlow / Keras
+- NumPy
+- Pandas
+- scikit-learn
+
+```bash
+pip install tensorflow numpy pandas scikit-learn
+````
+
+## 数据格式
+
+输入数据为 `.npz` 文件：
+
+* `sequence`：DNA 序列
+* `label`：相互作用标签（0/1）
+
+训练数据：
+
+```text
+EEL_B.npz
+EER_B.npz
+```
+
+测试数据：
+
+```text
+EEL_C.npz
+EER_C.npz
+```
+
+## 快速运行
+
+配置数据路径后运行：
+
+```bash
+python encontact.py
+```
+
+模型自动保存最佳权重：
+
+```text
+best_model.h5
+```
+
+并输出 **Accuracy、F1-Score、Precision、Recall、AUC、AUPR** 等指标。
+
+```
+```
