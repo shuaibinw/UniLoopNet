@@ -1,0 +1,11 @@
+基于 AlphaGenome 架构的双任务（EPI & EEI）基因组序列相互作用预测与重构模型。  环境要求Python 3.8+  PyTorch (带有 CUDA 支持)  NumPy  scikit-learn  tqdm  Bashpip install torch numpy scikit-learn tqdm
+数据格式输入数据需为包含 sequence (单热编码后可重塑为 $4 \times 5000$) 和 label 字段的 .npz 文件。  快速运行打开 main.py 配置数据路径与参数：  Pythonconfig = {
+    'epi_train_seq1_path': 'path/to/EPL_B.npz',
+    'epi_train_seq2_path': 'path/to/EPR_B.npz',
+    # ...
+    'batch_size': 8,
+    'device': 'cuda:0',
+    'outdir': './results/'
+}
+启动训练：  Bashpython main.py
+最佳模型 Checkpoint 将自动保存至 ./results/checkpoint/best_model.pth。  
