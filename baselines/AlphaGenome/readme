@@ -1,5 +1,43 @@
-基于 AlphaGenome 架构的双任务（EPI & EEI）基因组序列相互作用预测与重构模型。  环境要求Python 3.8+  PyTorch (带有 CUDA 支持)  NumPy  scikit-learn  tqdm  Bashpip install torch numpy scikit-learn tqdm
-数据格式输入数据需为包含 sequence (单热编码后可重塑为 $4 \times 5000$) 和 label 字段的 .npz 文件。  快速运行打开 main.py 配置数据路径与参数：  Pythonconfig = {
+# AlphaGenome-based Dual-Task Genomic Interaction Prediction
+
+基于 **AlphaGenome 架构**的双任务基因组序列相互作用预测与重构模型，用于同时预测：
+
+* **EPI**：Enhancer–Promoter Interaction
+* **EEI**：Enhancer–Enhancer Interaction
+
+## Environment
+
+* Python 3.8+
+* PyTorch (CUDA)
+* NumPy
+* scikit-learn
+* tqdm
+
+```bash
+pip install torch numpy scikit-learn tqdm
+```
+
+## Data Format
+
+输入数据为 `.npz` 文件，包含：
+
+```text
+sequence
+label
+```
+
+其中 `sequence` 为 one-hot 编码的 DNA 序列，长度为 **5000 bp**，可重塑为：
+
+```text
+4 × 5000
+```
+
+## Quick Start
+
+在 `main.py` 中配置数据路径和参数：
+
+```python
+config = {
     'epi_train_seq1_path': 'path/to/EPL_B.npz',
     'epi_train_seq2_path': 'path/to/EPR_B.npz',
     # ...
@@ -7,5 +45,16 @@
     'device': 'cuda:0',
     'outdir': './results/'
 }
-启动训练：  Bashpython main.py
-最佳模型 Checkpoint 将自动保存至 ./results/checkpoint/best_model.pth。  
+```
+
+启动训练：
+
+```bash
+python main.py
+```
+
+最佳模型将自动保存至：
+
+```text
+./results/checkpoint/best_model.pth
+```
