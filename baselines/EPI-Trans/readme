@@ -1,0 +1,45 @@
+# EPI-Transformer
+
+基于 **1D 卷积与 Transformer 融合架构**的增强子–启动子相互作用（EPI）预测模型。
+
+## 环境要求
+
+* Python 3.8+
+* TensorFlow >= 2.0
+* NumPy
+* scikit-learn
+* Matplotlib
+
+```bash
+pip install tensorflow numpy scikit-learn matplotlib
+```
+
+## 数据格式
+
+输入数据为 `.npz` 文件，包含：
+
+* `sequence`：DNA 序列，重塑为 `5000 × 4`
+* `label`：相互作用标签（0/1）
+
+## 快速运行
+
+在 `main.py` 中配置数据路径：
+
+```python
+seq1 = np.load('path/to/EPL_B.npz')  # Enhancer
+seq2 = np.load('path/to/EPR_B.npz')  # Promoter
+```
+
+启动训练与评估：
+
+```bash
+python main.py
+```
+
+模型权重自动保存至：
+
+```text
+EPI_Trans.h5
+```
+
+并输出 **Accuracy、F1-Score、AUC 和 AUPR** 等评估指标。
